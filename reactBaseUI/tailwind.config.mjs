@@ -1,8 +1,5 @@
-// tailwind.config.mjs
-import { colors } from "./src/theme.js"
-
 export default {
-  darkMode: "class", // Enables manual toggle via `.dark` class
+  darkMode: "class", // Aktiverar dark mode med .dark-klassen
   content: [
     "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -10,30 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Automatically inject both light and dark color schemes
-        background: colors.light.background,
-        foreground: colors.light.foreground,
-        muted: colors.light.muted,
-        primary: colors.light.primary,
-        secondary: colors.light.secondary,
-        success: colors.light.success,
-        warning: colors.light.warning,
-        danger: colors.light.danger,
-
-        // Dark mode variants (used with `dark:` prefix)
-        dark: {
-          background: colors.dark.background,
-          foreground: colors.dark.foreground,
-          muted: colors.dark.muted,
-          primary: colors.dark.primary,
-          secondary: colors.dark.secondary,
-          success: colors.dark.success,
-          warning: colors.dark.warning,
-          danger: colors.dark.danger,
-        },
+        background: "hsl(var(--background) / <alpha-value>)",
+        foreground: "hsl(var(--foreground) / <alpha-value>)",
+        muted: "hsl(var(--muted) / <alpha-value>)",
+        primary: "hsl(var(--primary) / <alpha-value>)",
+        secondary: "hsl(var(--secondary) / <alpha-value>)",
+        success: "hsl(var(--success) / <alpha-value>)",
+        warning: "hsl(var(--warning) / <alpha-value>)",
+        danger: "hsl(var(--danger) / <alpha-value>)",
       },
       fontFamily: {
-        // Optional: Default to Poppins, fallback sans-serif
         sans: ["Poppins", "sans-serif"],
       },
     },

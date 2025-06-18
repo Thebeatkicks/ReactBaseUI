@@ -1,4 +1,4 @@
-// src/theme.js
+// src/config/theme.js
 
 export const colors = {
   // Light mode color palette

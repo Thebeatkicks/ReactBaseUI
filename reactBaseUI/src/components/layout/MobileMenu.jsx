@@ -1,37 +1,48 @@
-import { X } from "lucide-react"
-import { AnimatePresence, motion } from "framer-motion"
+import { X, Home, Book, Layers } from "lucide-react"
 import GithubIcon from "../icons/GithubIcon"
 import DonateIcon from "../icons/DonateIcon"
 import LoginIcon from "../icons/LoginIcon"
 import ThemeToggleIcon from "../icons/ThemeToggleIcon"
-import NavLinks from "./NavLinks"
+import Button from "../ui/Button"
+import { NavLink } from "react-router-dom"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function MobileMenu({ isOpen, setIsOpen }) {
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          key="mobile-menu"
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed top-0 right-0 w-72 h-full bg-white dark:bg-background border-l dark:border-muted z-50 flex flex-col justify-between px-6 py-4"
+          className="fixed top-16 inset-x-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col px-6 py-6"
         >
-          {/* Stäng-knapp */}
-          <div className="flex justify-end">
-            <button onClick={() => setIsOpen(false)} aria-label="Stäng meny">
-              <X className="w-6 h-6 text-muted hover:text-primary transition dark:text-white" />
-            </button>
+
+          {/* Buttons */}
+          <div className="flex flex-col space-y-3 mb-6">
+            <Button variant="primary">Login</Button>
+            <Button variant="outline">Sign Up</Button>
           </div>
 
-          {/* Länkar */}
-          <div className="mt-8 space-y-6">
-            <NavLinks onClick={() => setIsOpen(false)} />
-          </div>
+          {/* Navigation */}
+          <nav className="flex flex-col gap-5 mb-6">
+            <NavLink to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 text-lg">
+              <Home className="w-5 h-5" />
+              Home
+            </NavLink>
+            <NavLink to="/docs" onClick={() => setIsOpen(false)} className="flex items-center gap-2 text-lg">
+              <Book className="w-5 h-5" />
+              Docs
+            </NavLink>
+            <NavLink to="/services" onClick={() => setIsOpen(false)} className="flex items-center gap-2 text-lg">
+              <Layers className="w-5 h-5" />
+              Services
+            </NavLink>
+          </nav>
 
-          {/* Ikoner i rad längst ner */}
-          <div className="flex items-center justify-around mt-auto pt-6 border-t dark:border-muted">
+          {/* Bottom icon row */}
+          <div className="mt-auto flex justify-center gap-5 border-t border-muted pt-4">
             <GithubIcon />
             <DonateIcon />
             <LoginIcon />

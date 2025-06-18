@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 10%;
+  --muted: 220 10% 60%;
+  --primary: 262 83% 58%;
+  --secondary: 160 84% 39%;
+  --success: 142 71% 45%;
+  --warning: 42 95% 55%;
+  --danger: 0 84% 60%;
+}
+
+.dark {
+  --background: 230 10% 10%;
+  --foreground: 0 0% 98%;
+  --muted: 220 10% 60%;
+  --primary: 262 100% 75%;
+  --secondary: 160 84% 50%;
+  --success: 142 71% 60%;
+  --warning: 42 100% 60%;
+  --danger: 0 84% 70%;
+}
