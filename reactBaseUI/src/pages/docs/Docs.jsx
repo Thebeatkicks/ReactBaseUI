@@ -5,6 +5,7 @@ import ButtonDoc from "./ButtonDoc"
 import BadgeDoc from "./BadgeDoc"  
 import ImageDoc from "./ImageDoc"   
 import CarouselDoc from "./CarouselDoc"
+import CustomTheme from "./CustomTheme"
 
 export default function Docs() {
   return (
@@ -15,6 +16,7 @@ export default function Docs() {
         <Route path="badge" element={<BadgeDoc />} />
         <Route path="image" element={<ImageDoc />} />
         <Route path="carousel" element={<CarouselDoc />} />
+        <Route path="custom-theme" element={<CustomTheme />} />
 
         
       </Routes>

@@ -16,6 +16,7 @@ export default function ButtonDoc() {
     { name: "Outline", code: `<Button variant="outline">Outline</Button>` },
     { name: "Ghost", code: `<Button variant="ghost">Ghost</Button>` },
     { name: "Transparent", code: `<Button variant="transparent">Transparent</Button>` },
+    { name: "Danger", code: `<Button variant="danger">Danger</Button>` },
   ]
   const iconCode = `<Button variant="primary"><ArrowRight className="w-4 h-4 mr-2" />Continue</Button>`
   const internalLinkCode = `<Link to="/about"><Button>About Us</Button></Link>`

@@ -15,6 +15,7 @@ export default function Button({
     outline: "border border-foreground text-foreground hover:bg-foreground/10",
     ghost: "text-foreground hover:bg-foreground/10",
     transparent: "bg-transparent text-primary hover:underline",
+    danger: "bg-danger text-white hover:bg-danger/90",
   }
 
   return (
