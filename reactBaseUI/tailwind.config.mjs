@@ -17,7 +17,8 @@ export default {
         danger: "hsl(var(--danger) / <alpha-value>)",
       },
       fontFamily: {
-        sans: ["Poppins", "sans-serif"],
+        heading: ["Poppins", "sans-serif"],
+        body:    ["Inter",   "sans-serif"],
       },
     },
   },

@@ -5,6 +5,9 @@ import Badge from "../components/ui/Badge"
 import Button from "../components/ui/Button"
 import Logo from "../components/icons/Logo"
 import { BookOpen, ArrowRight, ArrowUpRight } from "lucide-react"
+import CodeBlock from "../components/docs/CodeBlock"
+import Image from "../components/ui/Image"
+import code from "../assets/images/code.png"
 
 export default function Home() {
   const badgeColors = [
@@ -16,6 +19,7 @@ export default function Home() {
 ]
 
   const badges = ["React", "Tailwind", "Zustand", "Dark Mode", "Framer Motion"]
+  const installCode = `npm install reactbaseui`
 
   return (
     <section className="bg-background text-foreground min-h-screen pt-32 px-4">
@@ -58,7 +62,7 @@ export default function Home() {
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4">
+           <div className="flex flex-row flex-wrap justify-center md:justify-start gap-4 pt-4">
              <Link to="/admin">
              <Button variant="primary">
               
@@ -75,16 +79,22 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Side – Install Instructions */}
-        <div className="flex-1 max-w-md w-full bg-white dark:bg-[#2a2a2a] rounded-xl shadow-md p-6 border border-muted">
-          <h2 className="text-lg font-semibold mb-2">Install ReactBaseUI</h2>
-          <div className="bg-black text-white dark:bg-gray-900 p-4 rounded-md text-sm font-mono">
-            <pre>
-              <code>npm install reactbaseui</code>
-            </pre>
+        {/* Right Side – Picture */}
+        
+        <div className="flex-1 max-w-md w-full bg-background text-foreground p-6">
+          <div className="p-4">
+              <Image src={code} alt="Logo" className="w-96 h-96" />
           </div>
+          
         </div>
       </div>
+      <h2 className="text-lg font-semibold mb-2 pt-12">Install ReactBaseUI</h2>
+          <div className="text-black  p-4 rounded-md text-sm font-mono ">
+            <pre>
+               <CodeBlock language="bash" code={installCode} />
+            </pre>
+          </div>
     </section>
+    
   )
 }

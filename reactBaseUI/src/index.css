@@ -23,3 +23,16 @@
   --warning: 42 100% 60%;
   --danger: 0 84% 70%;
 }
+
+@layer components {
+  /* All "body"-text (html) får Inter */
+  html {
+    @apply font-body;
+  }
+
+  /* Rubriker, länkar och knappar får Poppins */
+  h1, h2, h3, h4, h5, h6,
+  a, button {
+    @apply font-heading;
+  }
+}
